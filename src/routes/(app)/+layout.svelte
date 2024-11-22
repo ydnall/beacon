@@ -1,13 +1,13 @@
 <script lang="ts">
-    import Navbar from '$lib/components/Navbar.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	let { children } = $props();
 </script>
 
-<div>
-    <Navbar />
+<div class="flex min-h-screen flex-col">
+	<Navbar />
 	<main>
 		{@render children()}
 	</main>
-    <Footer />
+	<Footer />
 </div>
