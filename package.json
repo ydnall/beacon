@@ -51,6 +51,7 @@
 		"@tailwindcss/typography": "^0.5.15",
 		"dotenv": "^16.4.5",
 		"drizzle-orm": "^0.36.3",
+		"lucide-svelte": "^0.460.1",
 		"pg": "^8.13.1"
 	}
 }
