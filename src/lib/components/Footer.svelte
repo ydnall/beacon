@@ -23,7 +23,7 @@
 					target="_blank"
 					rel="noreferrer"
 					class="font-medium underline underline-offset-4 hover:text-foreground">shadcn</a
-				>. The source code for <span class="font-bold">Beacon</span> is available on
+				>. The source code for <strong>Beacon</strong> is available on
 				<a
 					href="https://github.com/ydnall/beacon"
 					target="_blank"
