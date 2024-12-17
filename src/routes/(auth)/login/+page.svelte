@@ -5,7 +5,7 @@
 
 	import { Button } from '$lib/components/ui/button/index';
 
-	import { ChevronLeft } from 'lucide-svelte';
+	import { ChevronLeft, Github } from 'lucide-svelte';
 </script>
 
 <div class="container flex h-screen w-screen flex-col items-center justify-center">
@@ -13,8 +13,8 @@
 		><ChevronLeft class="size-4" />Back</Button
 	>
 	<div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-		<div class="flex flex-col text-center gap-2">
-			<img src="/beacon.svg" alt="Beacon" class="mx-auto size-6" />
+		<div class="flex flex-col gap-2 text-center">
+			<img src="/beacon.svg" alt="Beacon" class="mx-auto size-6 dark:invert" />
 			<h1 class="text-2xl font-semibold tracking-tight">Login to Beacon</h1>
 			<p class="text-sm text-muted-foreground">Enter your email to sign in to your account</p>
 		</div>
@@ -26,8 +26,15 @@
 					<span class="bg-background px-2 text-muted-foreground">Or continue with</span>
 				</div>
 			</div>
-			<Button variant="outline">GitHub</Button>
+			<Button variant="outline">
+				<Github class="size-4" />
+				GitHub
+			</Button>
 		</div>
-		<Button variant="link" href="/register" class="text-sm text-muted-foreground hover:text-brand underline underline-offset-4">Don't have an account? Sign Up</Button>
+		<p class="px-8 text-center text-sm text-muted-foreground">
+			<a class="hover:text-brand underline underline-offset-4" href="/register"
+				>Don't have an account? Sign Up</a
+			>
+		</p>
 	</div>
 </div>

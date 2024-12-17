@@ -18,10 +18,10 @@
 	<Form.Field {form} name="email">
 		<Form.Control>
 			{#snippet children({ props })}
-				<Input {...props} bind:value={$registerData.email} />
+				<Input {...props} placeholder="name@example.com" bind:value={$registerData.email} />
 			{/snippet}
 		</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>
-	<Form.Button>Sign Up with Email</Form.Button>
+	<Form.Button>Sign In with Email</Form.Button>
 </form>

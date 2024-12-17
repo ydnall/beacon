@@ -14,7 +14,7 @@
 	</div>
 	<div class="grid w-full items-start gap-10 rounded-lg border p-10 md:grid-cols-[1fr_200px]">
 		<div class="grid gap-6">
-			<h3 class="text-xl font-bold sm:text-2xl">Features in the Basic plan</h3>
+			<h3 class="text-xl font-bold sm:text-2xl">All included features</h3>
 			<ul class="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
 				<li class="flex items-center">
 					<Check class="mr-2 size-4" /> Unlimited Posts
