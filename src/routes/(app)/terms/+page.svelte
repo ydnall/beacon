@@ -1,6 +1,8 @@
 <article class="container max-w-3xl py-6 lg:py-12">
 	<div class="space-y-4">
-		<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Terms &amp; Conditions</h1>
+		<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+			Terms &amp; Conditions
+		</h1>
 		<p class="text-xl text-muted-foreground">Read our terms and conditions.</p>
 	</div>
 	<hr class="my-4" />

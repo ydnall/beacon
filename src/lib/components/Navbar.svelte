@@ -24,7 +24,7 @@
 {#snippet navItem(href: string, label: string)}
 	<a
 		{href}
-		class="hidden text-sm text-muted-foreground transition-colors hover:text-black dark:hover:text-white md:inline"
+		class="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-black dark:hover:text-white md:inline"
 		>{label}</a
 	>
 	<a {href} class="inline text-sm hover:underline md:hidden" onclick={toggleMenu}>{label}</a>
@@ -57,7 +57,7 @@
 		</div>
 	</nav>
 	<nav>
-		<Button href="/login" variant="secondary" class="font-normal">
+		<Button href="/login" variant="secondary">
 			<span>Login</span>
 		</Button>
 	</nav>
