@@ -18,10 +18,17 @@
 	<Form.Field {form} name="email">
 		<Form.Control>
 			{#snippet children({ props })}
-				<Input {...props} placeholder="name@example.com" bind:value={$registerData.email} />
+				<Form.Label class="sr-only">Email</Form.Label>
+				<Input
+					type="email"
+					spellcheck="false"
+					placeholder="name@example.com"
+					{...props}
+					bind:value={$registerData.email}
+				/>
 			{/snippet}
 		</Form.Control>
-		<Form.FieldErrors />
+		<Form.FieldErrors class="pb-1 text-xs font-light" />
 	</Form.Field>
 	<Form.Button>Sign In with Email</Form.Button>
 </form>

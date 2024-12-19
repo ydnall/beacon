@@ -9,17 +9,17 @@ const db = drizzle(process.env.DATABASE_URL!); // my drizzle instance
 export const auth = betterAuth({
 	database: drizzleAdapter(db, {
 		provider: 'pg', // or "mysql", "sqlite"
-        schema: {
-            user: schema.user,
-            session: schema.session,
-            account: schema.account,
-            verification: schema.verification
-        }
+		schema: {
+			user: schema.user,
+			session: schema.session,
+			account: schema.account,
+			verification: schema.verification
+		}
 	}),
-    socialProviders: { 
-        github: { 
-            clientId: process.env.GITHUB_CLIENT_ID!, 
-            clientSecret: process.env.GITHUB_CLIENT_SECRET!, 
-        } 
-    }, 
+	socialProviders: {
+		github: {
+			clientId: process.env.GITHUB_CLIENT_ID!,
+			clientSecret: process.env.GITHUB_CLIENT_SECRET!
+		}
+	}
 });
