@@ -4,14 +4,34 @@
 	import { registerSchema, type RegisterSchema } from './schema';
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { authClient } from '$lib/client';
+	import { LoaderCircleIcon } from 'lucide-svelte';
 
-	export let data: SuperValidated<Infer<RegisterSchema>>;
+	const { data } = $props<{ data: SuperValidated<Infer<RegisterSchema>> }>();
 
 	const form = superForm(data, {
 		validators: zodClient(registerSchema)
 	});
 
 	const { form: registerData, enhance } = form;
+
+	let loading: boolean = $state(false);
+
+	const handleMagicLink = async () => {
+		try {
+			loading = true;
+			await authClient.signIn.magicLink({
+				email: 'user@email.com',
+				callbackURL: '/dashboard'
+			});
+		} catch (error) {
+			console.error('Magic link login failed:', error);
+		} finally {
+			setTimeout(() => {
+				loading = false;
+			}, 2000);
+		}
+	};
 </script>
 
 <form method="POST" use:enhance class="flex w-full flex-col">
@@ -30,5 +50,10 @@
 		</Form.Control>
 		<Form.FieldErrors class="pb-1 text-xs font-light" />
 	</Form.Field>
-	<Form.Button>Sign In with Email</Form.Button>
+	<Form.Button disabled={loading} onclick={handleMagicLink}>
+		{#if loading}
+			<LoaderCircleIcon class="size-4 animate-spin" />
+		{/if}
+		Sign In with Email
+	</Form.Button>
 </form>

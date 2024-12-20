@@ -38,31 +38,31 @@
 			<div class="flex items-center gap-3">
 				<div>
 					{#if $session.data}
-					  <div>
-						<p>
-						  {$session?.data?.user.name}
-						</p>
-						<button
-						  onclick={async () => {
-							await authClient.signOut();
-						  }}
-						>
-						  Sign Out
-						</button>
-					  </div>
+						<div>
+							<p>
+								{$session?.data?.user.name}
+							</p>
+							<button
+								onclick={async () => {
+									await authClient.signOut();
+								}}
+							>
+								Sign Out
+							</button>
+						</div>
 					{:else}
-					  <button
-						onclick={async () => {
-						  await authClient.signIn.social({
-							provider: "github",
-							callbackURL: "/dashboard"
-						  });
-						}}
-					  >
-						Continue with github
-					  </button>
+						<button
+							onclick={async () => {
+								await authClient.signIn.social({
+									provider: 'github',
+									callbackURL: '/dashboard'
+								});
+							}}
+						>
+							Continue with github
+						</button>
 					{/if}
-				  </div>
+				</div>
 				<Button variant="ghost" size="icon">
 					<Bell class="size-4" />
 				</Button>
