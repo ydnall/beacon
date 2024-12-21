@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Bell, Settings, Search } from 'lucide-svelte';
+	import { Bell, Settings, Search, LogOut } from 'lucide-svelte';
 	import { Card } from '$lib/components/ui/card';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
@@ -35,34 +35,13 @@
 					<Input bind:value={searchQuery} placeholder="Search..." class="pl-8" />
 				</div>
 			</div>
+			{#if $session.data}
+				<p>
+					User: {$session?.data?.user.name} |
+					Email: {$session?.data?.user.email}
+				</p>
+			{/if}
 			<div class="flex items-center gap-3">
-				<div>
-					{#if $session.data}
-						<div>
-							<p>
-								{$session?.data?.user.name}
-							</p>
-							<button
-								onclick={async () => {
-									await authClient.signOut();
-								}}
-							>
-								Sign Out
-							</button>
-						</div>
-					{:else}
-						<button
-							onclick={async () => {
-								await authClient.signIn.social({
-									provider: 'github',
-									callbackURL: '/dashboard'
-								});
-							}}
-						>
-							Continue with github
-						</button>
-					{/if}
-				</div>
 				<Button variant="ghost" size="icon">
 					<Bell class="size-4" />
 				</Button>
@@ -70,6 +49,22 @@
 					<Settings class="size-4" />
 				</Button>
 				<ThemeSwitcher />
+				<div>
+					{#if $session.data}
+						<div class="flex items-center gap-3">
+							<Button
+								variant="outline"
+								onclick={async () => {
+									await authClient.signOut();
+								}}
+								class="flex items-center"
+								href="/"
+							>
+								<LogOut class="size-4"/> Logout 
+							</Button>
+						</div>
+					{/if}
+				</div>
 			</div>
 		</header>
 
