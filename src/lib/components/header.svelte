@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { Button } from './ui/button/index';
-	import { X } from 'lucide-svelte';
+	import { X, ChevronRight } from 'lucide-svelte';
+	import { authClient } from '$lib/client';
 
 	interface NavItem {
 		href: string;
 		label: string;
-	}
+	};
 
 	const navItems: NavItem[] = [
 		{ href: '/#features', label: 'Features' },
@@ -18,7 +19,9 @@
 
 	function toggleMenu() {
 		isOpen = !isOpen;
-	}
+	};
+
+	const session = authClient.useSession();
 </script>
 
 {#snippet navItem(href: string, label: string)}
@@ -57,9 +60,31 @@
 		</div>
 	</nav>
 	<nav>
-		<Button href="/login" variant="secondary">
-			<span>Login</span>
-		</Button>
+		{#if $session.data}
+			<Button
+				variant="link"
+				onclick={async () => {
+					await authClient.signOut();
+				}}
+				class="hover:no-underline"
+			>
+				<span>Sign out</span>
+			</Button>
+			<Button href="/dashboard" class="group">
+				<span class="flex items-center gap-2">
+					Dashboard
+					<ChevronRight class="transition-transform duration-200 group-hover:translate-x-1" />
+				</span>
+			</Button>
+		{:else}
+			<Button href="/login" variant="link" class="hover:no-underline">Sign in</Button>
+			<Button href="/register" class="group">
+				<span class="flex items-center gap-2">
+					Get started
+					<ChevronRight class="transition-transform duration-200 group-hover:translate-x-1" />
+				</span>
+			</Button>
+		{/if}
 	</nav>
 </header>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import ThemeSwitcher from './theme-switcher.svelte';
 </script>
 
 <footer class="container">

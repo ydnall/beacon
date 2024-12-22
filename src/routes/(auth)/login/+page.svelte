@@ -3,7 +3,7 @@
 	import LoginForm from './LoginForm.svelte';
 	const { data } = $props<{ data: PageData }>();
 	import { Button } from '$lib/components/ui/button/index';
-	import { ChevronLeft} from 'lucide-svelte';
+	import { ChevronLeft } from 'lucide-svelte';
 </script>
 
 <div class="container flex h-screen w-screen flex-col items-center justify-center">

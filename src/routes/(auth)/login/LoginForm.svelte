@@ -24,10 +24,10 @@
 				emailLoading = true;
 				await authClient.signIn.magicLink({
 					email: formData.get('email') as string,
-					callbackURL: '/dashboard',
+					callbackURL: '/dashboard'
 				});
 				toast.message('Magic link sent', {
-					description: 'Check your email to sign in',
+					description: 'Check your email to sign in'
 				});
 			} catch (error) {
 				console.error('Email sign in failed:', error);
@@ -62,7 +62,7 @@
 	const session = authClient.useSession();
 </script>
 
-<Toaster position="top-center" richColors/>
+<Toaster position="top-center" richColors />
 
 <form method="POST" use:enhance class="flex w-full flex-col">
 	<Form.Field {form} name="email">

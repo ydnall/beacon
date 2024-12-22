@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from './ui/button/index';
+	import { Github } from 'lucide-svelte';
 </script>
 
 <section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
@@ -12,9 +13,12 @@
 			SvelteKit and styled using Tailwind CSS.
 		</p>
 		<div class="flex gap-4">
-			<Button href="/login" size="lg">Get Started</Button>
+			<Button href="/register" size="lg">Try Demo</Button>
 			<Button size="lg" variant="outline" href="https://github.com/ydnall/beacon" target="_blank">
-				GitHub
+				<span class="flex items-center gap-2">
+					<Github class="size-4" />
+					View on GitHub
+				</span>
 			</Button>
 		</div>
 	</div>
