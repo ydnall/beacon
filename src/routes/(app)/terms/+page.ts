@@ -1,7 +1,7 @@
-import type { PageLoad } from "./$types.js";
+import type { PageLoad } from './$types.js';
 
 export const load: PageLoad = async () => {
-    return {
-        title: "Terms of Service",
-    };
+	return {
+		title: 'Terms of Service'
+	};
 };

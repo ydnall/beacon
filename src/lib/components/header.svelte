@@ -6,7 +6,7 @@
 	interface NavItem {
 		href: string;
 		label: string;
-	};
+	}
 
 	const navItems: NavItem[] = [
 		{ href: '/#features', label: 'Features' },
@@ -19,7 +19,7 @@
 
 	function toggleMenu() {
 		isOpen = !isOpen;
-	};
+	}
 
 	const session = authClient.useSession();
 </script>
