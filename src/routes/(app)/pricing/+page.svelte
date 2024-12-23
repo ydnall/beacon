@@ -41,7 +41,7 @@
 				<h4 class="text-7xl font-bold">$10</h4>
 				<p class="text-sm font-medium text-muted-foreground">One Time Purchase</p>
 			</div>
-			<Button href="/login" class="py-6">
+			<Button href="/register" class="py-6">
 				<span>Get Started</span>
 			</Button>
 		</div>
