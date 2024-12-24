@@ -8,7 +8,7 @@
 
 <div class="container flex h-screen w-screen flex-col items-center justify-center">
 	<Button variant="ghost" href="/" class="absolute left-4 top-4 md:left-8 md:top-8"
-		><ChevronLeft class="size-4" />Back</Button
+		><ChevronLeft />Back</Button
 	>
 	<div class="mx-auto flex w-full flex-col justify-center space-y-4 sm:w-[350px]">
 		<div class="flex flex-col gap-2 text-center">

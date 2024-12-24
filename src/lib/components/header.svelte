@@ -38,9 +38,7 @@
 		<div class="flex">
 			<a href="/" class="mr-10 hidden items-center md:flex">
 				<img src="/beacon.svg" alt="Beacon" class="mr-2 size-6 dark:invert" />
-				<div class="font-bold">
-					<span>Beacon</span>
-				</div>
+				<span class="font-bold">Beacon</span>
 			</a>
 			<button class="flex items-center md:hidden" onclick={toggleMenu}>
 				{#if isOpen}
@@ -48,9 +46,7 @@
 				{:else}
 					<img src="/beacon.svg" alt="Beacon" class="mr-2 size-6 dark:invert" />
 				{/if}
-				<div class="font-bold">
-					<span>Menu</span>
-				</div>
+				<span class="font-bold">Menu</span>
 			</button>
 			<div class="hidden items-center space-x-5 md:flex">
 				{#each navItems as { href, label }}
@@ -71,18 +67,14 @@
 				<span>Sign out</span>
 			</Button>
 			<Button href="/dashboard" class="group">
-				<span class="flex items-center gap-2">
-					Dashboard
-					<ChevronRight class="transition-transform duration-200 group-hover:translate-x-1" />
-				</span>
+				<span>Dashboard</span>
+				<ChevronRight class="transition-transform duration-200 group-hover:translate-x-1" />
 			</Button>
 		{:else}
 			<Button href="/login" variant="link" class="hover:no-underline">Sign in</Button>
 			<Button href="/register" class="group">
-				<span class="flex items-center gap-2">
-					Get started
-					<ChevronRight class="transition-transform duration-200 group-hover:translate-x-1" />
-				</span>
+				<span>Get started</span>
+				<ChevronRight class="transition-transform duration-200 group-hover:translate-x-1" />
 			</Button>
 		{/if}
 	</nav>
@@ -96,9 +88,7 @@
 			<div class="flex items-center">
 				<a href="/" class="flex items-center" onclick={toggleMenu}>
 					<img src="/beacon.svg" alt="Beacon" class="mr-2 size-6 dark:invert" />
-					<div class="font-bold">
-						<span>Beacon</span>
-					</div>
+					<span class="font-bold">Beacon</span>
 				</a>
 			</div>
 			<div class="ml-2 flex flex-col space-y-4">

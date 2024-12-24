@@ -13,12 +13,12 @@
 			SvelteKit and styled using Tailwind CSS.
 		</p>
 		<div class="flex gap-4">
-			<Button href="/register" size="lg">Try Demo</Button>
+			<Button href="/register" size="lg">
+				<span>Try demo</span>
+			</Button>
 			<Button size="lg" variant="outline" href="https://github.com/ydnall/beacon" target="_blank">
-				<span class="flex items-center gap-2">
-					<Github class="size-4" />
-					View on GitHub
-				</span>
+				<Github />
+				<span>View on GitHub</span>
 			</Button>
 		</div>
 	</div>

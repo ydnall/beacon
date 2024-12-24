@@ -75,9 +75,9 @@
 	</Form.Field>
 	<Form.Button disabled={!!authMethod}>
 		{#if authMethod === 'email'}
-			<LoaderCircleIcon class="size-4 animate-spin" />
+			<LoaderCircleIcon class="animate-spin" />
 		{/if}
-		Sign In with Email
+		<span>Sign In with Email</span>
 	</Form.Button>
 </form>
 
@@ -90,10 +90,9 @@
 
 <Button variant="outline" disabled={!!authMethod} onclick={handleGitHubLogin}>
 	{#if authMethod === 'github'}
-		<LoaderCircleIcon class="size-4 animate-spin" />
-		GitHub
+		<LoaderCircleIcon class="animate-spin" />
 	{:else}
-		<Github class="size-4" />
-		GitHub
+		<Github />
 	{/if}
+	<span>GitHub</span>
 </Button>

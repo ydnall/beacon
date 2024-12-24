@@ -42,7 +42,7 @@
 				<p class="text-sm font-medium text-muted-foreground">One Time Purchase</p>
 			</div>
 			<Button href="/register" class="py-6">
-				<span>Get Started</span>
+				<span>Get started</span>
 			</Button>
 		</div>
 	</div>
